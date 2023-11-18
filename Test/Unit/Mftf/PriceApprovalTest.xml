@@ -1,0 +1,18 @@
+<!-- app/code/DigitalHub/DoubleCheck/Test/Mftf/PriceApprovalTest.xml -->
+<test xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Test:etc/test.xsd">
+    <name>Price Approval Test</name>
+    <dependencies>
+        <module name="DigitalHub_DoubleCheck"/>
+    </dependencies>
+    <configuration>
+        <dataSource name="admin_user" path="Magento/Admin/FunctionalTest/AdminRoleWithAccessToMagentoBackendAndSystemConfigurationFixture/admin_user"/>
+    </configuration>
+    <action type="adminLogin"/>
+    <action type="searchPage" entity="approval_grid" />
+    <action type="search" entity="approval_grid" field="sku" value="SKU123" />
+    <action type="click" element="SKU123" entity="approval_grid"/>
+    <assertions>
+        <assertion type="elementNotExists" element="approve_button"/>
+    </assertions>
+    <action type="logout"/>
+</test>

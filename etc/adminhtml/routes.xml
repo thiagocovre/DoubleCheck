@@ -1,0 +1,9 @@
+<!-- app/code/DigitalHub/DoubleCheck/etc/adminhtml/routes.xml -->
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="digitalhub" frontName="digitalhub">
+            <module name="DigitalHub_DoubleCheck"/>
+        </route>
+    </router>
+</config>

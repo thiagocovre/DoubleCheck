@@ -1,0 +1,8 @@
+<!--@subject DigitalHub Price Change Notification @-->
+{{template config_path="design/email/header_template"}}
+
+<p>Uma alteração de preço foi solicitada para o produto {{var product.getName()}} (SKU: {{var product.getSku()}}).</p>
+<p>Valor anterior: {{var product.getOrigData('price')}}</p>
+<p>Novo valor pendente de aprovação: {{var product.getPrice()}}</p>
+
+{{template config_path="design/email/footer_template"}}

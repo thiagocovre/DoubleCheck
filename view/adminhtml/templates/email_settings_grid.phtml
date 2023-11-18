@@ -1,0 +1,29 @@
+<!-- app/code/DigitalHub/DoubleCheck/view/adminhtml/templates/email_settings_grid.phtml -->
+<h2><?php echo __('Email Settings Grid'); ?></h2>
+
+<?php $emailSettingsData = $block->getEmailSettingsData(); ?>
+
+<?php if (!empty($emailSettingsData)): ?>
+    <div>
+        <table class="data grid">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Configuração</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($emailSettingsData as $item): ?>
+                    <tr>
+                        <td><?php echo $item['id']; ?></td>
+                        <td><?php echo $item['config']; ?></td>
+                        <td><?php echo $item['value']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+<?php else: ?>
+    <p><?php echo __('Nenhum dado de configuração de e-mail disponível.'); ?></p>
+<?php endif; ?>

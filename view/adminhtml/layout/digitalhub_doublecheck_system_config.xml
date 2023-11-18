@@ -1,0 +1,18 @@
+<!-- app/code/DigitalHub/DoubleCheck/view/adminhtml/layout/digitalhub_doublecheck_system_config.xml -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="advanced_modules">
+            <block class="Magento\Backend\Block\Widget\Button\SplitButton" name="digitalhub_doublecheck_advanced_config" before="-" template="DigitalHub_DoubleCheck::system/config/advanced_button.phtml">
+                <arguments>
+                    <argument name="id" xsi:type="string">digitalhub_doublecheck_advanced_config</argument>
+                    <argument name="label" xsi:type="string" translate="true">Double Check Price</argument>
+                    <argument name="title" xsi:type="string" translate="true">Double Check Price</argument>
+                    <argument name="action" xsi:type="array">
+                        <item name="path" xsi:type="string">adminhtml/system_config/edit/section/digitalhub_doublecheck</item>
+                    </argument>
+                </arguments>
+                <action method="addCss"><stylesheet>mage/adminhtml/widgets.css</stylesheet></action>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

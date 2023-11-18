@@ -1,0 +1,4 @@
+# app/code/DigitalHub/DoubleCheck/etc/graphql/pricing_approval_query.graphql
+type Query {
+    pricingApproval: [PricingApproval]
+}

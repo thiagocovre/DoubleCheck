@@ -1,0 +1,12 @@
+<!-- app/code/DigitalHub/DoubleCheck/view/adminhtml/layout/digitalhub_doublecheck.xml -->
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" template="DigitalHub_DoubleCheck::approval.phtml">
+                <block class="DigitalHub\DoubleCheck\Block\Adminhtml\PricingApprovalGrid" name="pricing_approval_grid" as="pricing_approval_grid" template="DigitalHub_DoubleCheck::pricing_approval_grid.phtml"/>
+                <block class="DigitalHub\DoubleCheck\Block\Adminhtml\EmailSettingsGrid" name="email_settings_grid" as="email_settings_grid" template="DigitalHub_DoubleCheck::email_settings_grid.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

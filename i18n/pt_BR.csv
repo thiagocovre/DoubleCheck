@@ -1,0 +1,41 @@
+# app/code/DigitalHub/DoubleCheck/i18n/pt_BR.csv
+
+# Configurações do Sistema
+"Double Check Price","Verificação Dupla de Preço"
+"Enable Double Check Price Module","Ativar Módulo Verificação Dupla de Preço"
+"General Settings","Configurações Gerais"
+"Email Recipient","Destinatário do E-mail"
+"Enable Email Notification","Ativar Notificação por E-mail"
+"Email Template","Modelo de E-mail"
+"Save Changes","Salvar Alterações"
+
+# Grid de Aprovação de Preços
+"Pricing Approval Grid","Grade de Aprovação de Preços"
+"ID","ID"
+"Nome do Usuário","Nome do Usuário"
+"SKU do Produto","SKU do Produto"
+"Data","Data"
+"Atributo","Atributo"
+"Valor Anterior","Valor Anterior"
+"Valor Atual","Valor Atual"
+"Aprovação","Aprovação"
+"Nenhum dado de aprovação de preço disponível.","Nenhum dado de aprovação de preço disponível."
+
+# Grid de Configurações de E-mail
+"Email Settings Grid","Grade de Configurações de E-mail"
+"ID","ID"
+"Configuração","Configuração"
+"Valor","Valor"
+"Nenhum dado de configuração de e-mail disponível.","Nenhum dado de configuração de e-mail disponível."
+
+# CLI
+"Listar Alterações Pendentes","Listar Alterações Pendentes"
+"Aprovar ou Reprovar Alteração","Aprovar ou Reprovar Alteração"
+
+# E-mails
+"Alteração de Preço Pendente","Alteração de Preço Pendente"
+"Uma alteração de preço pendente aguarda sua aprovação.","Uma alteração de preço pendente aguarda sua aprovação. SKU: %1"
+
+# Testes Unitários
+"Testes Unitários","Testes Unitários"
+"Tentativa de Alteração de Preço","Tentativa de Alteração de Preço"

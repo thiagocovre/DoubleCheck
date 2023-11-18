@@ -1,0 +1,35 @@
+<!-- app/code/DigitalHub/DoubleCheck/etc/adminhtml/system.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="digitalhub" translate="label" sortOrder="10">
+            <label>Digital Hub</label>
+        </tab>
+        <menu>
+            <digitalhub_doublecheck translate="title" module="digitalhub_doublecheck">
+                <title>Double Check Price</title>
+                <sortOrder>10</sortOrder>
+                <children>
+                    <general translate="title" module="digitalhub_doublecheck">
+                        <title>General Settings</title>
+                        <sortOrder>10</sortOrder>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <fields>
+                            <enabled translate="label comment" module="digitalhub_doublecheck">
+                                <label>Enable Double Check Price Module</label>
+                                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                                <comment>Enable or disable the Double Check Price Module.</comment>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                            </enabled>
+                        </fields>
+                    </general>
+                </children>
+            </digitalhub_doublecheck>
+        </menu>
+    </system>
+</config>
+
