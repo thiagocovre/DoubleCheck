@@ -1,62 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- app/code/DigitalHub/DoubleCheck/view/adminhtml/ui_component/changes_grid.xml -->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">digitalhub_doublecheck_changes_grid.digitalhub_doublecheck_changes_grid_data_source</item>
-            <item name="deps" xsi:type="string">digitalhub_doublecheck_changes_grid.digitalhub_doublecheck_changes_grid_data_source</item>
+            <item name="provider" xsi:type="string">changes_grid.changes_grid_data_source</item>
+            <item name="deps" xsi:type="string">changes_grid.changes_grid_data_source</item>
         </item>
-        <item name="spinner" xsi:type="string">digitalhub_doublecheck_changes_columns</item>
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Adicionar Novo</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/new</item>
-            </item>
-        </item>
+        <item name="spinner" xsi:type="string">changes_columns</item>
     </argument>
-    <dataSource name="digitalhub_doublecheck_changes_grid_data_source">
+
+    <dataSource name="changes_grid_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">DigitalHub\DoubleCheck\Model\ResourceModel\Change\Grid\Collection</argument>
-            <argument name="name" xsi:type="string">digitalhub_doublecheck_changes_grid_data_source</argument>
+            <argument name="class" xsi:type="string">DigitalHub\DoubleCheck\Ui\Component\Listing\ChangesGridDataProvider</argument>
+            <argument name="name" xsi:type="string">changes_grid_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="update_url" xsi:type="url" path="mui/index/render"/>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
                 </item>
             </argument>
         </argument>
     </dataSource>
-    <columns name="spinner">
-        <settings>
-            <spinner>digitalhub_doublecheck_changes_columns</spinner>
-        </settings>
-    </columns>
-    <listingToolbar name="listing_top">
-        <settings>
-            <sticky>true</sticky>
-        </settings>
-        <bookmark name="bookmarks"/>
-        <columnsControls name="columns_controls"/>
-        <exportButton name="export_button"/>
-        <filters name="listing_filters"/>
-        <filterSearch name="fulltext"/>
-        <paging name="listing_paging"/>
-    </listingToolbar>
-    <columns name="digitalhub_doublecheck_changes_columns">
-        <!-- Defina as colunas aqui -->
-        <!-- ... -->
 
-        <column name="action" class="DigitalHub\DoubleCheck\Ui\Component\Listing\Column\ChangeActions">
+    <columns name="changes_columns">
+        <!-- Coluna ID -->
+        <column name="id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">id</item>
-                    <item name="component" xsi:type="string">DigitalHub_DoubleCheck/js/grid/columns/actions</item>
-                    <item name="dataType" xsi:type="string">actions</item>
-                    <item name="label" xsi:type="string" translate="true">Ações</item>
-                    <item name="sortOrder" xsi:type="number">100</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Coluna Nome do Usuário -->
+        <column name="user_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Nome do Usuário</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Coluna SKU -->
+        <column name="sku">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">SKU</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Coluna Data -->
+        <column name="data">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Data</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Coluna Atributo -->
+        <column name="atributo">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Atributo</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Coluna Valor Anterior -->
+        <column name="valor_anterior">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Valor Anterior</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Coluna Valor Atual -->
+        <column name="valor_atual">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Valor Atual</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Coluna Aprovação -->
+        <column name="aprovacao">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Aprovação</item>
+                    <item name="sortOrder" xsi:type="number">80</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">select</item>
+                    </item>
                 </item>
             </argument>
         </column>

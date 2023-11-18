@@ -62,7 +62,6 @@ class Change extends AbstractModel
                 $newPrice = $this->getPendingValue();
                 $product->setPrice($newPrice);
                 $product->save(); // Salvar o produto após a alteração de preço
-                // Adicione qualquer outra lógica necessária para aplicar a alteração de preço
             }
         }
     }
