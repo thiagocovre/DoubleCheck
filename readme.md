@@ -10,6 +10,7 @@ Clone o repositório para a pasta `app/code/DigitalHub/DoubleCheck` no seu diret
 
    git clone https://github.com/thiagocovre/doublecheck.git 
    
+
    Estrutura de Pastas
    app/code/DigitalHub/DoubleCheck
 
@@ -17,8 +18,11 @@ Clone o repositório para a pasta `app/code/DigitalHub/DoubleCheck` no seu diret
 ## Atualize e ative o módulo.
 
 bin/magento setup:upgrade
+
 bin/magento setup:di:compile
+
 bin/magento module:enable DigitalHub_DoubleCheck
+
 bin/magento setup:upgrade
 
 ## Limpe o Cache 
@@ -46,10 +50,12 @@ A aprovação aplica o novo valor do atributo price no produto em questão.
 
 ## CLI (Command Line Interface)
 Listar todas as alterações pendentes.
+
 bin/magento digitalhub:price:pending-list
 
 ## Aprovar ou reprovar determinada alteração.
 bin/magento digitalhub:price:approve 123
+
 bin/magento digitalhub:price:desapprove 123
 
 ## Notificação por E-mail 
