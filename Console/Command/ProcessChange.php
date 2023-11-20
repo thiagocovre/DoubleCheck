@@ -38,7 +38,6 @@ class ProcessChange extends Command
         }
 
         // Processar a aprovação ou reprovação da alteração
-        // Adicione a lógica conforme necessário
 
         $output->writeln("Alteração com ID $changeId processada com sucesso.");
     }
